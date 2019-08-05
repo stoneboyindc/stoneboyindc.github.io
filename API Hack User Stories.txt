@@ -1,0 +1,10 @@
+﻿1. As a user, I want to be able to submit any address as location.
+2. As a user, I want to be able to submit points of interest locations.
+3. As a user, I want to be able to resubmit a new query.
+4. As a user, I want to be able to display results on the same page.
+5. As a user, I want to be able to select between 1 and 100 passes of the space station.
+6. As a user, I want passes to display the chosen locations, date, and time for each pass.
+7. As a user, I want to allow for misspelling of locations i.e Washington, DC vs. wahsington.
+8. As a user, in the event of an error I want to receive visual feedback informing that something went wrong.
+9. As a user, I want to be able to navigate the page with the keyboard only.
+10. As a user, I want to be able to contact the creator(s) of the app.
