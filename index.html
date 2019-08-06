@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ISS Planner(working title)</title>
+</head>
+<body>
+  <main>
+    <h1>ISS Planner</h1>
+    <fieldset>
+      <form action="#">
+        <h3>Enter your address or a point of interest below</h3>
+        <input type="search" name="enter-address" id="enter-address" placeholder="Address or POI" required>
+        <h3>Each pass is another chance to catch a glimpse of the International Space Station.</h3>
+        <p>Select the number of passes (between 1 and 100) you'd like to recieve</p>
+        <input type="number" name="num-of-passes" id="num-of-passes" min="1" max="100" placeholder="1-100" required>
+        <input type="button" value="When to look up?">
+      </form>
+    </fieldset>
+    <div id="pass-results"></div>
+    <div id="error-message"></div>
+  </main>
+  <footer>Created with love by Courtney Roberson & Carl Ortutay</footer>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
