@@ -1,10 +1,19 @@
 
+/*function getLocation() { 
+  let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+  let url = "http://api.open-notify.org/iss-pass.json?lat=40.6892&lon=74.0445"
+
+fetch(proxyUrl + url) .then(response => response.json()) .then(responseJson => console.log(responseJson)); }
+
+$(getLocation)*/
+
 const geoAPI = "https://api.mapbox.com/geocoding/v5/mapbox.places";
 
 const mpKey = `pk.eyJ1IjoiY2FybG9ydHkiLCJhIjoiY2p5eGtsemNjMGRhZTNncWV6am5xYXN1ZCJ9.FmCOZr6penXoMtoJuThUog`;  // <== remember to pluck in your MapBox API Key
 
 const mbToken = `.json?access_token=${mpKey}`
 
+let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
 const iSSurl = 'http://api.open-notify.org/iss-pass.json?'
 
 fetch(`${geoAPI}/New York${mbToken}`).then(resp => {
@@ -14,7 +23,7 @@ fetch(`${geoAPI}/New York${mbToken}`).then(resp => {
 }).then(resp => {
     const [lon, lat] = resp.features[0].center;
 
-		fetch(`${iSSurl}lat=${lat}&lon=${lon}`).then(res=>{
+		fetch(proxyUrl + `${iSSurl}lat=${lat}&lon=${lon}`).then(res=>{
 		    if(res.ok) {
 		        return res.json()
 		    }
