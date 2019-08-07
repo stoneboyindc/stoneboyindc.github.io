@@ -1,7 +1,7 @@
 'use strict'
 
 
-//const geoAPI = "https://api.mapbox.com/geocoding/v5/mapbox.places";
+
 /*function getLocation() { 
   let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
   let url = "http://api.open-notify.org/iss-pass.json?lat=40.6892&lon=74.0445"
@@ -22,14 +22,8 @@ const geoAPI = "https://api.mapbox.com/geocoding/v5/mapbox.places";
 let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
 const iSSurl = 'http://api.open-notify.org/iss-pass.json?'
 
-const url = "http://api.open-notify.org/iss-pass.json?lat=45&lon=45"
-const proxyURL = "https://cors-anywhere.herokuapp.com/"
-
 function getLocation() {
-	const options = {
-		headers: header("Access-Control-Allow-Origin: *")
-		}
-	};
+
 
 	fetch(proxyUrl, url)
 		.then(response => response.json())
