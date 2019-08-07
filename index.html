@@ -13,11 +13,13 @@
     <fieldset>
       <form action="#">
         <h3>Enter your address or a point of interest below</h3>
-        <input type="search" name="enter-address" id="enter-address" placeholder="Address or POI" required>
+        <label>Get Started:
+          <input id="address" class="value" type="text" placeholder="Address or POI" required>
+        </label>
         <h3>Each pass is another chance to catch a glimpse of the International Space Station.</h3>
         <p>Select the number of passes (between 1 and 100) you'd like to recieve</p>
-        <input type="number" name="num-of-passes" id="num-of-passes" min="1" max="100" placeholder="1-100" required>
-        <input type="button" value="When to look up?" id="submit">
+        <input id="num" class="value" type="number" placeholder="1-100" min="1" max="100" required>
+        <input class="submit" type="submit" value="When to look up?">
       </form>
     </fieldset>
 
