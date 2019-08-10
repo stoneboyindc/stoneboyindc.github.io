@@ -11,15 +11,16 @@
 <body>
   
     <fieldset class="input-form">
-      <h1>Spot the International Space Station</h1>
+      <h1>Scout the International Space Station</h1>
       <h4>The ISS orbits the Earth every 90 minutes, traveling at 5 miles per second.</h4>
       <h4>Even at that speed it is possible to catch a glimpse.</h4>
       <h4>All it takes is the right timing, and <b>The ISS Scout</b> is here to help!</h4>
+      <i><p>Times displayed in 24 hour format</p></i>
       <form action="#">
-        <input id="address" class="value" type="text" placeholder="Enter an Address or Point of Interest" onfocus="this.placeholder=''" required>
-        <input id="num" class="value" type="select" placeholder="Number of passes (1-5)" onfocus="this.placeholder=''" min="1" max="5" required>
+        <input id="address" class="value" type="text" placeholder="Enter an Address or POI" onfocus="this.placeholder=''" required>
         <br>
         <button class="submit" type="submit">When to look up?</button>
+        <h4 id="sightings">Next possible sightings:</h4>
       </form>
       <div id="pass-results"></div>
       <div id="error-message"></div>

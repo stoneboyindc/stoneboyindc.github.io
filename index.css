@@ -46,7 +46,7 @@ body {
 }
 
 h1 {
-  font-size: 210%;
+  font-size: 190%;
   font-weight: 900;
   margin-top: 3%;
   margin-bottom: 3%;
@@ -102,11 +102,16 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
 }
 
+#sightings {
+  font-size: 200%;
+  font-weight: bolder;
+}
+
 #pass-results {
   font-size: 125%;
   font-weight: bold;
   margin-top: 8%;
-  color: rgb(75, 75, 75);
+  color: silver;
 }
 
 footer {
@@ -122,4 +127,63 @@ footer {
 a {
   color: #e4f1fe;
   text-decoration: none;
+}
+
+@media screen and (max-width:1024px){
+  .input-form {
+    width: 60%;
+  }
+  
+  h1 {
+    font-size: 235%;
+  }
+
+  h4 {
+    font-size: 120%;
+  }
+
+  #address {
+    width: 60%;
+  }
+
+  #sightings {
+    margin-bottom: -7%;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .input-form {
+    width: 75%;
+  }
+  
+  h1 {
+    font-size: 220%;
+  }
+
+  h4 {
+    font-size: 140%;
+    font-weight: 400;
+  }
+
+  #address {
+    margin-top: -10%;
+    width: 50%;
+    height: 50%;
+  }
+
+  input, text, textarea {
+    font-weight: 600;
+    font-size: 1%;
+  }
+
+  #sightings {
+    font-size: 175%;
+    font-weight: 600;
+    margin-bottom: -10%;
+  }
+
+}
+
+@media screen and (max-width:425px) {
+
 }
