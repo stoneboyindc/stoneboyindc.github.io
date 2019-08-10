@@ -9,10 +9,10 @@
   <title>ISS Planner(working title)</title>
 </head>
 <body>
+  <h1>International Space Station Planner</h1>
   <main>
-    <h1>International Space Station Planner</h1>
-
-    <fieldset>
+    
+    <fieldset class="input-form">
       <form action="#">
         <h3>Enter your address or a point of interest below</h3>
         <label>
@@ -23,11 +23,9 @@
         <input id="num" class="value" type="number" placeholder="1-100" min="1" max="100" required>
         <input class="submit" type="submit" value="When to look up?">
       </form>
+      <div id="pass-results"></div>
+      <div id="error-message"></div>
     </fieldset>
-
-    <div id="pass-results"></div>
-    <div id="error-message"></div>
-
   </main>
   <footer>Coded with love by Courtney Roberson & Carl Ortutay</footer>
   <script

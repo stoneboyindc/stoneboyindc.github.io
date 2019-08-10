@@ -1,9 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
-
 
 html {
   background: url(https://user-images.githubusercontent.com/10658186/62740595-ca2dc980-ba27-11e9-9259-9b12cce09100.jpg) no-repeat center center fixed; 
@@ -11,40 +9,71 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  color: silver;
+  font-family: 'Blinker', sans-serif;
 }
 
-body {
-    color: silver;
-    font-family: 'Blinker', sans-serif;
-    height: 10em;
-    position: relative; 
-    margin: 0;
-    position: absolute;
-    top: 30%;
+
+
+main {
+    position: fixed;
+    height: auto;
+    width: auto; 
+    top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     text-align: center;
 }
 
-h1 {
-    margin-bottom: 3%;
+
+ h1 {
+  margin-top: 4%;
+  padding: 0 0 20px;
+  text-align: center;
 }
+
+.input-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 400px;
+  height: 500px;
+  padding: 80px 40px;
+  box-sizing: border-box;
+  background: transparent;
+  backdrop-filter: blur(3px);  
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 8%;
+  border-color: transparent;
+  -webkit-box-shadow: 0px 0px 10px rgb(192, 192, 192);
+	-moz-box-shadow: 0px 0px 10px silver;
+	-o-box-shadow: 0px 0px 10px silver;
+	-ms-box-shadow: 0px 0px 10px silver;
+	box-shadow: 0px 0px 10px silver;
+}
+
+/*original styling below*/
+/*h1 {
+    margin-bottom: 3%;
+}*/
 
 h3 {
     font-weight: 700;
 }
 
-fieldset {
+/*fieldset {
     padding: 0;
     margin: 0;
 }
 
 form {
     box-sizing: border-box;
-    height: 280px;
     padding: 4%;
     margin: auto;
-}
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}*/
+
 
 
