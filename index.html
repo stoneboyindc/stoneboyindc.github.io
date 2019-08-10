@@ -6,32 +6,32 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="index.css">
   <link href="https://fonts.googleapis.com/css?family=Blinker&display=swap" rel="stylesheet">
-  <title>ISS Planner(working title)</title>
+  <title>The ISS Scout</title>
 </head>
 <body>
   
-  <!--<main>-->
     <fieldset class="input-form">
-      <h1>International Space Station Planner</h1>
+      <h1>Spot the International Space Station</h1>
+      <h4>The ISS orbits the earth every 90 minutes, traveling at 5 miles per second.</h4>
+      <h4>Even at that speed it is possible to catch a glimpse.</h4>
+      <h4>All it takes is the right timing, and The ISS Scout is here to help!</h4>
       <form action="#">
-        <h3>Enter your address or a point of interest below</h3>
-        <label>
-          <input id="address" class="value" type="text" placeholder="Address or POI" required>
-        </label>
-        <h3>Each pass is another chance to catch a glimpse of the International Space Station.</h3>
-        <p>Select the number of passes (between 1 and 100) you'd like to recieve</p>
-        <input id="num" class="value" type="number" placeholder="1-100" min="1" max="100" required>
-        <input class="submit" type="submit" value="When to look up?">
+        <input id="address" class="value" type="text" placeholder="Enter an Address or POI" required>
+        <input id="num" class="value" type="number" placeholder="1-5" min="1" max="5" required>
+        <br>
+        <button class="submit" type="submit">When to look up?</button>
       </form>
       <div id="pass-results"></div>
       <div id="error-message"></div>
     </fieldset>
-  <!--<main>-->
-  <footer>Coded with love by Courtney Roberson & Carl Ortutay</footer>
+
+  <footer>Coded with love by <a href="mailto:courtneyb.roberson@gmail.com">Courtney Roberson</a> & <a href="mailto:carl.ortutay@gmail.com">Carl Ortutay</a></footer>
+  
   <script
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
   <script src="script.js"></script>
+
 </body>
 </html>
