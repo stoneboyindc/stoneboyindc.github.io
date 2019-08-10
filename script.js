@@ -39,7 +39,7 @@ function displayResults(responseJson) {
   $('#pass-results').empty();
   responseJson.response.forEach(function(d) {
 		let date = new Date(d['risetime'] * 1000);
-		$('#pass-results').append('<span>' + date.toString() + '</span><br>');
+		$('#pass-results').append('<br><span>' + date.toString() + '</span><br>');
 	});
 };
 
