@@ -50,13 +50,9 @@ function userInput() {
 
 function watchForm() {
 	$("form").submit(event => {
-		console.log("Calculating...");
 		event.preventDefault();
 		getLocation();
 	});
 }
 
-$(function() {
-	console.log("Ready for your input");
-	watchForm();
-})
+$(watchForm());
