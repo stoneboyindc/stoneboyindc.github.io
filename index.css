@@ -75,6 +75,10 @@ form {
   font-size: 100%;
 }
 
+#address {
+  border-radius: 10px;
+}
+
 #num {
   width: 90%;
 }
