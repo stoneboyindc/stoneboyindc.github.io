@@ -105,6 +105,28 @@ input[type="number"]::-webkit-outer-spin-button {
   text-align: center;
 }
 
+button {
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: silver;
+  color: black;
+  font-family: "Blinker", sans-serif;
+  font-size: 100%;
+  font-weight: 500;
+  height: 900%;
+  width: 35%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: transparent;
+  color: silver;
+  cursor: pointer;
+  border: .5px solid silver;
+}
+
 #sightings {
   font-size: 200%;
   font-weight: bolder;
@@ -215,6 +237,11 @@ a {
   textarea {
     font-weight: 400;
     font-size: 1%;
+  }
+
+  button {
+    width: 50%;
+    border: none;
   }
 
   #sightings {
