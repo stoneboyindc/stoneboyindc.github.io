@@ -1,17 +1,18 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-  background: url(https://user-images.githubusercontent.com/10658186/62740595-ca2dc980-ba27-11e9-9259-9b12cce09100.jpg) no-repeat center center fixed; 
+  background: url(https://user-images.githubusercontent.com/10658186/62740595-ca2dc980-ba27-11e9-9259-9b12cce09100.jpg)
+    no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   color: silver;
-  font-family: 'Blinker', sans-serif;
+  font-family: "Blinker", sans-serif;
 }
 
 body {
@@ -29,20 +30,20 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   height: 80%;
   width: 35%;
   box-sizing: border-box;
   background: transparent;
-  backdrop-filter: blur(10px);  
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 8%;
   border-color: transparent;
   -webkit-box-shadow: 0px 0px 15px silver(192, 192, 192);
-	-moz-box-shadow: 0px 0px 15px silver;
-	-o-box-shadow: 0px 0px 15px silver;
-	-ms-box-shadow: 0px 0px 15px silver;
-	box-shadow: 0px 0px 15px silver;
+  -moz-box-shadow: 0px 0px 15px silver;
+  -o-box-shadow: 0px 0px 15px silver;
+  -ms-box-shadow: 0px 0px 15px silver;
+  box-shadow: 0px 0px 15px silver;
 }
 
 h1 {
@@ -66,9 +67,9 @@ form {
   background: transparent;
   border: none;
   -webkit-box-shadow: 0px 0px 5px silver(192, 192, 192);
-	-moz-box-shadow: 0px 0px 5px silver;
-	-o-box-shadow: 0px 0px 5px silver;
-	-ms-box-shadow: 0px 0px 5px silver;
+  -moz-box-shadow: 0px 0px 5px silver;
+  -o-box-shadow: 0px 0px 5px silver;
+  -ms-box-shadow: 0px 0px 5px silver;
   box-shadow: 0px 0px 5px silver;
   text-align: center;
   font-size: 100%;
@@ -78,13 +79,15 @@ form {
   width: 90%;
 }
 
-input, text, textarea {
+input,
+text,
+textarea {
   color: silver;
   background: transparent;
   font-weight: bold;
 }
 
-input[type=text] {
+input[type="text"] {
   width: 90%;
   display: inline-block;
   box-sizing: border-box;
@@ -92,9 +95,9 @@ input[type=text] {
   color: silver;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
 ::placeholder {
@@ -129,11 +132,11 @@ a {
   text-decoration: none;
 }
 
-@media screen and (max-width:1024px){
+@media screen and (max-width: 1024px) {
   .input-form {
     width: 60%;
   }
-  
+
   h1 {
     font-size: 235%;
   }
@@ -151,11 +154,11 @@ a {
   }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
   .input-form {
     width: 75%;
   }
-  
+
   h1 {
     font-size: 220%;
   }
@@ -171,7 +174,9 @@ a {
     height: 50%;
   }
 
-  input, text, textarea {
+  input,
+  text,
+  textarea {
     font-weight: 600;
     font-size: 1%;
   }
@@ -181,14 +186,13 @@ a {
     font-weight: 600;
     margin-bottom: -10%;
   }
-
 }
 
-@media screen and (max-width:425px) {
+@media screen and (max-width: 425px) {
   .input-form {
     border-radius: 25px;
   }
-  
+
   h1 {
     font-size: 115%;
   }
@@ -202,7 +206,9 @@ a {
     width: 250px;
   }
 
-  input, text, textarea {
+  input,
+  text,
+  textarea {
     font-weight: 400;
     font-size: 1%;
   }
@@ -210,5 +216,4 @@ a {
   #sightings {
     font-size: 150%;
   }
-
 }
