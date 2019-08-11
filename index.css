@@ -190,7 +190,8 @@ a {
 
 @media screen and (max-width: 425px) {
   html {
-    background-size: fill;
+    background-size: cover;
+    background-attachment: fixed;
   }
   
   body {
