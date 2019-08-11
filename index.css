@@ -196,4 +196,19 @@ a {
   h4 {
     font-size: 75%;
   }
+
+  #address {
+    height: 10px;
+    width: 250px;
+  }
+
+  input, text, textarea {
+    font-weight: 400;
+    font-size: 1%;
+  }
+
+  #sightings {
+    font-size: 150%;
+  }
+
 }
