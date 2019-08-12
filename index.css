@@ -109,7 +109,7 @@ input[type="number"]::-webkit-outer-spin-button {
   text-align: center;
 }
 
-button {
+.submit {
   display: inline-block;
   box-sizing: border-box;
   background-color: silver;
@@ -117,7 +117,6 @@ button {
   font-family: "Blinker", sans-serif;
   font-size: 100%;
   font-weight: 500;
-  height: 900%;
   width: 35%;
   border: none;
   border-radius: 10px;
@@ -128,7 +127,7 @@ button:hover {
   background-color: transparent;
   color: silver;
   cursor: pointer;
-  border: .5px solid silver;
+  border: 0.5px solid silver;
 }
 
 #sightings {
@@ -141,7 +140,6 @@ button:hover {
   font-weight: bold;
   margin-top: 8%;
   color: silver;
-  
 }
 
 footer {
@@ -219,7 +217,7 @@ a {
   body {
     height: 100vh;
   }
-  
+
   .input-form {
     border-radius: 25px;
   }
@@ -248,7 +246,7 @@ a {
     font-size: 1%;
   }
 
-  button {
+  .submit {
     width: 50%;
     border: none;
   }
