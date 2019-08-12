@@ -17,6 +17,9 @@ To build our application, we've used the following web programming languages:
 - JavaScript
 - jQUery
 
+### Note
+Some web browsers may prevent your results from displaying. In order to receive your sighting dates and times, please ensure that any extensions you are running "trusts" our secure site.
+
 ## Mission Control
 
 **Carl Ortutay**, Engineer <br>
