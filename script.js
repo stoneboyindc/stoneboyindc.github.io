@@ -11,6 +11,7 @@ let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
 const iSSurl = 'http://api.open-notify.org/iss-pass.json?'
 
 function getLocation() {
+	//let passes = $("#num").val();
 	fetch(`${geoAPI}/${userInput()}${mbToken}`).then(response => {
 		if (response.ok) {
 			return response.json();
@@ -35,8 +36,8 @@ function getLocation() {
 }
 
 function displayResults(responseJson) {
-  $('#pass-results').empty();
-  responseJson.response.forEach(function(d) {
+	$('#pass-results').empty();
+	responseJson.response.forEach(function (d) {
 		let date = new Date(d['risetime'] * 1000);
 		$('#pass-results').append('<br><span>' + date.toString() + '</span><br>');
 	});
