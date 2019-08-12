@@ -19,13 +19,13 @@ function getLocation() {
 	}).then(response => {
 		const [lon, lat] = response.features[0].center;
 
-		fetch(proxyUrl + `${iSSurl}lat=${lat}&lon=${lon}`).then(res => {
-			if (res.ok) {
-				return res.json()
+		fetch(proxyUrl + `${iSSurl}lat=${lat}&lon=${lon}`).then(response => {
+			if (response.ok) {
+				return response.json()
 			}
 		}).then(res => {
-			console.log(res);
-			displayResults(res);
+			console.log(response);
+			displayResults(response);
 		}).catch(errI => {
 			console.log('Something wrong with ISS', errI);
 		})
