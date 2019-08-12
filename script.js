@@ -12,7 +12,7 @@ const iSSurl = 'http://api.open-notify.org/iss-pass.json?'
 
 function getLocation() {
 	//let passes = $("#num").val();
-	fetch(`${geoAPI}/${userInput()}${mbToken}`).then(response => {
+ fetch(`${geoAPI}/${userInput()}${mbToken}`).then(response => {
 		if (response.ok) {
 			return response.json();
 		}
