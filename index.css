@@ -159,28 +159,6 @@ a {
   text-decoration: none;
 }
 
-/*@media screen and (max-width: 1024px) {
-  .input-form {
-    width: 60%;
-  }
-
-  h1 {
-    font-size: 235%;
-  }
-
-  h4 {
-    font-size: 120%;
-  }
-
-  #address {
-    width: 60%;
-  }
-
-  #sightings {
-    margin-bottom: -7%;
-  }
-}*/
-
 @media screen and (max-width: 768px) {
   .input-form {
     width: 75%;
