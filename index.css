@@ -208,6 +208,17 @@ a {
 }
 
 @media screen and (max-width: 425px) {
+  html {
+    background: url(https://user-images.githubusercontent.com/10658186/62740595-ca2dc980-ba27-11e9-9259-9b12cce09100.jpg)
+      no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+  }
+  
   body {
     height: 100vh;
   }
