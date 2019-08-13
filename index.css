@@ -11,8 +11,8 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  color: silver;
-  font-family: "Blinker", sans-serif;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -24,6 +24,8 @@ body {
   text-align: center;
   height: 100%;
   width: 100%;
+  color: silver;
+  font-family: "Blinker", sans-serif;
 }
 
 .input-form {
@@ -32,7 +34,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   height: 80%;
-  width: 35%;
+  width: auto;
   box-sizing: border-box;
   background: transparent;
   backdrop-filter: blur(15px);
@@ -115,7 +117,7 @@ input[type="number"]::-webkit-outer-spin-button {
   background-color: silver;
   color: black;
   font-family: "Blinker", sans-serif;
-  font-size: 100%;
+  font-size: 110%;
   font-weight: 500;
   width: 35%;
   border: none;
@@ -136,9 +138,9 @@ button:hover {
 }
 
 #pass-results {
-  font-size: 125%;
+  font-size: 90%;
   font-weight: bold;
-  margin-top: 8%;
+  margin-top: -2%;
   color: silver;
 }
 
@@ -148,7 +150,7 @@ footer {
   height: 50;
   width: 100%;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1em;
   bottom: 0;
 }
 
@@ -157,7 +159,7 @@ a {
   text-decoration: none;
 }
 
-@media screen and (max-width: 1024px) {
+/*@media screen and (max-width: 1024px) {
   .input-form {
     width: 60%;
   }
@@ -177,7 +179,7 @@ a {
   #sightings {
     margin-bottom: -7%;
   }
-}
+}*/
 
 @media screen and (max-width: 768px) {
   .input-form {
