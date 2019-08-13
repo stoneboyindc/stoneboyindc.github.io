@@ -53,11 +53,11 @@ function userInput() {
   return userLocation;
 }
 
-function clearResults(){
-  $('#form').on('click', '.new-search', function (event) {
+function clearResults() {
+  $("#form").on("click", ".new-search", function(event) {
     event.preventDefault();
     $("#pass-results").remove();
-    $('.value').val("Enter an Address or POI");
+    $(".value").val("");
   });
 }
 
