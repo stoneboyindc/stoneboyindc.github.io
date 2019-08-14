@@ -57,8 +57,9 @@ function userInput() {
 function clearResults() {
   $("#form").on("click", ".new-search", function(event) {
     event.preventDefault();
-    $("#pass-results").remove();
+    $("#pass-results").empty();
     $(".value").val("");
+    console.log('CLEAR!')
   });
 }
 
