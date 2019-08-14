@@ -4,7 +4,7 @@ const geoAPI = "https://api.mapbox.com/geocoding/v5/mapbox.places";
 
 const mpKey = `pk.eyJ1IjoiY2FybG9ydHkiLCJhIjoiY2p6MGpxNmNsMGNkYzNncWloeGtjdWc0MiJ9.44uitu32EXkSSvz3FWF0FA`;
 
-const mbToken = `.json?access_token=${mpKey}`;
+const mbToken = `.json?cachebuster=1565810008146&autocomplete=false&fuzzyMatch=false&access_token=${mpKey}`;
 
 let proxyUrl = "https://cors-anywhere.herokuapp.com/";
 
@@ -37,6 +37,7 @@ function getLocation() {
     })
     .catch(errM => {
       console.log("Something wrong with MapBox", errM);
+      $('#pass-results').append(`<span>Location not found. Try again.</span>`)
     });
 }
 
