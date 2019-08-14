@@ -282,3 +282,30 @@ a {
     font-size: 100%;
   }
 }
+
+@media screen and (max-width: 320px){
+  h1 {
+    font-size: 85%;
+  }
+  
+  #address {
+    width: 85%;
+    font-size: 80%;
+  }
+
+  .submit {
+    font-size: 75%;
+  }
+
+  .new-search {
+    font-size: 75%;
+  }
+
+  #pass-results {
+    font-size: 75%;
+  }
+
+  footer {
+    font-size: 80%;
+  }
+}
