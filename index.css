@@ -55,7 +55,7 @@ h1 {
   margin-bottom: 3%;
 }
 
-h4 {
+h2 {
   margin: 1.5%;
 }
 
@@ -182,7 +182,7 @@ a {
     font-size: 220%;
   }
 
-  h4 {
+  h2 {
     font-size: 140%;
     font-weight: 400;
   }
@@ -231,7 +231,7 @@ a {
     font-size: 120%;
   }
 
-  h4 {
+  h2 {
     font-size: 100%;
   }
 
@@ -286,6 +286,10 @@ a {
 @media screen and (max-width: 320px){
   h1 {
     font-size: 85%;
+  }
+
+  h2 {
+    font-size: 80%;
   }
   
   #address {
