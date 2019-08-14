@@ -37,7 +37,7 @@ function getLocation() {
     })
     .catch(errM => {
       console.log("Something wrong with MapBox", errM);
-      $('#pass-results').append(`<span>Location not found. Try again.</span>`)
+      $('#pass-results').append(`<strong><span>Location not found. Try again.</span></strong>`)
     });
 }
 
