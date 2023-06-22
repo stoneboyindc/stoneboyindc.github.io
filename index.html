@@ -1,1 +1,61 @@
-"Hello World" 
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>React App</title>
+  <script src="https://unpkg.com/react/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState } = React;
+    const { useEffect } = React;
+    const { createRoot } = ReactDOM;
+
+    function onMessage(event) {
+      if (event.data.clientToken == null) {
+        return;
+      }
+      let clientToken = event.data.clientToken;
+      console.log("Received token from parent window: " + clientToken);
+
+      var formData = new FormData();
+      formData.append("clientToken", clientToken);
+      formData.append("toolkitType", "StandardValuation");
+
+      fetch("/api/Authorization/Start", {
+        method: "post",
+        body: formData
+      }).then(function (response) {
+        if (response.status === 200) {
+          var data = response.json();
+          console.log(data);
+        } else {
+          // The request failed.
+          console.log("Request failed!");
+        }
+      });
+    }
+
+    function App() {
+      var parentUrl = (window.location != window.parent.location)
+        ? document.referrer
+        : document.location.href;
+
+      console.log("parentUrl", parentUrl);
+      return (
+        <div>
+          Hello, World!
+        </div>
+      );
+    }
+    const container = document.getElementById('root');
+    const root = createRoot(container); // createRoot(container!) if you use TypeScript
+    root.render(<App />);
+  </script>
+</body>
+
+</html>
