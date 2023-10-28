@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
 
-<body>
-    
-    <button id="play-btn">Play</button>
-    <button id="stop-btn">Stop</button>
+<body style="background-color: #333;">
+
+    <button id="play-btn" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 10px 20px; font-size: 16px;">
+      Play
+    </button>
+  
+    <button id="stop-btn" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 10px 20px; font-size: 16px;">
+      Stop 
+    </button>
+    <!-- <button id="play-btn">Play</button>
+    <button id="stop-btn">Stop</button> -->
     <script>
         const audioCtx = new AudioContext();
         const oscillators = {}; 
