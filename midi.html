@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    
+    <button id="play-btn">Play</button>
+    <button id="stop-btn">Stop</button>
+    <script>
+        const audioCtx = new AudioContext();
+        const oscillators = {}; 
+        function midiToFreq(note) {
+            return 440 * Math.pow(2, (note - 69) / 12);
+        }
+        // Generate random note
+        function generateRandomNote() {
+            const note = Math.floor(Math.random() * 127); // 0-127 MIDI note range
+            const velocity = Math.random() * 127; // 0-127 velocity range
+
+            return [note, velocity];
+        }
+
+        // Play the note
+        function playNote(note) {
+            const [midiNote, velocity] = note;
+
+            const osc = audioCtx.createOscillator();
+            oscillators[note] = osc;
+            osc.frequency.value = midiToFreq(midiNote);
+            osc.type = 'sawtooth';
+            osc.connect(audioCtx.destination);
+            osc.start();
+
+            osc.addEventListener('ended', () => {
+                osc.disconnect();
+            });
+        }
+
+        // Generate random sequence
+        const sequence = [];
+        for (let i = 0; i < 10; i++) {
+            sequence.push(generateRandomNote());
+        }
+
+        // Play sequence
+        sequence.forEach((note, i) => {
+            setTimeout(() => {
+                playNote(note);
+            }, i * 500); // play note every 0.5s
+        });
+    </script>
+
+    <script>
+        // MIDI and Audio Context setup
+
+        const playBtn = document.getElementById('play-btn');
+
+        playBtn.addEventListener('click', () => {
+            // Generate and play random sequence
+            const sequence = [];
+            for (let i = 0; i < 10; i++) {
+                sequence.push(generateRandomNote());
+            }
+
+            sequence.forEach((note, i) => {
+                setTimeout(() => {
+                    playNote(note);
+                }, i * 500);
+            });
+        });
+
+        const stopBtn = document.getElementById('stop-btn');
+        stopBtn.addEventListener('click', () => {
+            isPlaying = false; // Stop any playback
+
+            // Stop any currently playing oscillators
+            Object.values(oscillators).forEach(osc => {
+                osc.stop();
+                osc.disconnect();
+            });
+        });
+    </script>
+
+</body>
+
+</html>
