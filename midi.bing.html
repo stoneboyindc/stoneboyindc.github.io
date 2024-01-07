@@ -3,29 +3,60 @@
 
 <body style="background-color: #333;">
 
-    <button id="play-btn" style="position: absolute; top: 40%; left: 40%; transform: translate(-50%, -50%); padding: 10px 20px; font-size: 16px;">
-      Play
+    <button id="play-btn"
+        style="position: absolute; top: 40%; left: 40%; transform: translate(-50%, -50%); padding: 10px 20px; font-size: 16px;">
+        Play
     </button>
-  
-    <button id="stop-btn" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 10px 20px; font-size: 16px;">
-      Stop 
+
+    <button id="stop-btn"
+        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 10px 20px; font-size: 16px;">
+        Stop
     </button>
     <script>
         const audioCtx = new AudioContext();
-        const oscillators = {}; 
+        const oscillators = {};
         function midiToFreq(note) {
             return 440 * Math.pow(2, (note - 69) / 12);
         }
         // Generate random note
+        // function generateRandomNote() {
+        //     const note = Math.floor(Math.random() * 127); // 0-127 MIDI note range
+        //     const velocity = Math.random() * 127; // 0-127 velocity range
+
+        //     return [note, velocity];
+        // }
+        // Define C Major scale (in MIDI numbers)
+        // const CMajorScale = [60, 62, 64, 65, 67, 69, 71, 72];
+        const CMajorScale = [60, 62, 64, 65, 67, 69, 71, 72, 74, 76, 77, 79, 81, 83, 84, 86, 88, 89, 91, 93, 95];
+
+        // Generate random note
         function generateRandomNote() {
-            const note = Math.floor(Math.random() * 127); // 0-127 MIDI note range
+            const noteIndex = Math.floor(Math.random() * CMajorScale.length);
+            const note = CMajorScale[noteIndex]; // MIDI note from C Major scale
             const velocity = Math.random() * 127; // 0-127 velocity range
 
             return [note, velocity];
         }
 
+
         // Play the note
-        function playNote(note) {
+        // function playNote(note) {
+        //     const [midiNote, velocity] = note;
+
+        //     const osc = audioCtx.createOscillator();
+        //     oscillators[note] = osc;
+        //     osc.frequency.value = midiToFreq(midiNote);
+        //     osc.type = 'sawtooth';
+        //     osc.connect(audioCtx.destination);
+        //     osc.start();
+
+        //     osc.addEventListener('ended', () => {
+        //         osc.disconnect();
+        //     });
+        // }
+
+
+        function playNote(note, duration = 0.5) { // duration in seconds
             const [midiNote, velocity] = note;
 
             const osc = audioCtx.createOscillator();
@@ -35,11 +66,13 @@
             osc.connect(audioCtx.destination);
             osc.start();
 
+            // Stop the note after the specified duration
+            osc.stop(audioCtx.currentTime + duration);
+
             osc.addEventListener('ended', () => {
                 osc.disconnect();
             });
         }
-
         // Generate random sequence
         const sequence = [];
         for (let i = 0; i < 10; i++) {
@@ -62,7 +95,7 @@
         playBtn.addEventListener('click', () => {
             // Generate and play random sequence
             const sequence = [];
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 100; i++) {
                 sequence.push(generateRandomNote());
             }
 

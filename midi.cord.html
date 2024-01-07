@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<body style="background-color: #333;">
+
+    <button id="play-btn"
+        style="position: absolute; top: 40%; left: 40%; transform: translate(-50%, -50%); padding: 10px 20px; font-size: 16px;">
+        Play
+    </button>
+
+    <button id="stop-btn"
+        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 10px 20px; font-size: 16px;">
+        Stop
+    </button>
+    <script>
+        const audioCtx = new AudioContext();
+        const oscillators = {};
+
+        function midiToFreq(note) {
+            return 440 * Math.pow(2, (note - 69) / 12);
+        }
+
+        // Generate random chord
+        function generateRandomChord() {
+            const baseNote = Math.floor(Math.random() * 127); // 0-127 MIDI note range
+            const velocity = Math.random() * 127; // 0-127 velocity range
+
+            // Generate a major chord (root, major third, perfect fifth)
+            const chord = [baseNote, baseNote + 4, baseNote + 7].map(note => [note, velocity]);
+            return chord;
+        }
+
+        // Play the chord
+        function playChord(chord) {
+            const duration = Math.random(); // random duration between 0 and 1 second
+            chord.forEach(note => {
+                const [midiNote, velocity] = note;
+
+                const osc = audioCtx.createOscillator();
+                oscillators[note] = osc;
+                osc.frequency.value = midiToFreq(midiNote);
+                osc.type = 'sawtooth';
+                osc.connect(audioCtx.destination);
+                osc.start();
+
+                // Stop the note after the specified duration
+                osc.stop(audioCtx.currentTime + duration);
+
+                osc.addEventListener('ended', () => {
+                    osc.disconnect();
+                });
+            });
+        }
+
+        // Generate random sequence
+        const sequence = [];
+        for (let i = 0; i < 10; i++) {
+            sequence.push(generateRandomChord());
+        }
+
+        // Play sequence
+        sequence.forEach((chord, i) => {
+            setTimeout(() => {
+                playChord(chord);
+            }, i * 500); // play chord every 0.5s
+        });
+
+    </script>
+
+    <script>
+        // MIDI and Audio Context setup
+
+        const playBtn = document.getElementById('play-btn');
+
+        playBtn.addEventListener('click', () => {
+            // Generate random sequence
+            const sequence = [];
+            for (let i = 0; i < 100; i++) {
+                sequence.push(generateRandomChord());
+            }
+
+            // Play sequence
+            sequence.forEach((chord, i) => {
+                setTimeout(() => {
+                    playChord(chord);
+                }, i * 500); // play chord every 0.5s
+            });
+
+
+        });
+
+        const stopBtn = document.getElementById('stop-btn');
+        stopBtn.addEventListener('click', () => {
+            isPlaying = false; // Stop any playback
+
+            // Stop any currently playing oscillators
+            Object.values(oscillators).forEach(osc => {
+                osc.stop();
+                osc.disconnect();
+            });
+        });
+    </script>
+
+</body>
+
+</html>
