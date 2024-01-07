@@ -50,10 +50,10 @@
             const chord = [baseNote, baseNote + third, baseNote + 7].map(note => [note, 127]);
             return chord;
         }
-        
+
         // Play the chord
         function playChord(chord) {
-            const duration = Math.random() * 2 + 0.5; // random duration between 0 and 1 second
+            const duration = Math.random() * 4; // random duration between 0 and 1 second
             chord.forEach(note => {
                 const [midiNote, velocity] = note;
 
