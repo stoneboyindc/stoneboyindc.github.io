@@ -21,25 +21,46 @@
         }
 
         // Generate random chord
-        function generateRandomChord() {
-            const baseNote = Math.floor(Math.random() * 127); // 0-127 MIDI note range
-            const velocity = Math.random() * 127; // 0-127 velocity range
+        // function generateRandomChord() {
+        //     const baseNote = Math.floor(Math.random() * 127); // 0-127 MIDI note range
+        //     const velocity = Math.random() * 127; // 0-127 velocity range
 
-            // Generate a major chord (root, major third, perfect fifth)
-            const chord = [baseNote, baseNote + 4, baseNote + 7].map(note => [note, velocity]);
+        //     // Generate a major chord (root, major third, perfect fifth)
+        //     const chord = [baseNote, baseNote + 4, baseNote + 7].map(note => [note, velocity]);
+        //     return chord;
+        // }
+
+        // Generate random chord
+        // function generateRandomChord() {
+        //     const baseNote = Math.floor(Math.random() * 60) + 48; // MIDI note range restricted to one octave starting from middle C (60)
+
+        //     // Generate a major or minor chord (root, major/minor third, perfect fifth)
+        //     const isMajor = Math.random() > 0.5;
+        //     const third = isMajor ? 4 : 3;
+        //     const chord = [baseNote, baseNote + third, baseNote + 7].map(note => [note, 127]);
+        //     return chord;
+        // }
+
+        function generateRandomChord() {
+            const baseNote = Math.floor(Math.random() * 24) + 48; // MIDI note range restricted to two octaves starting from middle C (60)
+
+            // Generate a major or minor chord (root, major/minor third, perfect fifth)
+            const isMajor = Math.random() > 0.5;
+            const third = isMajor ? 4 : 3;
+            const chord = [baseNote, baseNote + third, baseNote + 7].map(note => [note, 127]);
             return chord;
         }
-
+        
         // Play the chord
         function playChord(chord) {
-            const duration = Math.random(); // random duration between 0 and 1 second
+            const duration = Math.random() * 2 + 0.5; // random duration between 0 and 1 second
             chord.forEach(note => {
                 const [midiNote, velocity] = note;
 
                 const osc = audioCtx.createOscillator();
                 oscillators[note] = osc;
                 osc.frequency.value = midiToFreq(midiNote);
-                osc.type = 'sawtooth';
+                osc.type = 'sine'; // sine wave for a more pleasant sound
                 osc.connect(audioCtx.destination);
                 osc.start();
 
